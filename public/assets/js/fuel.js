@@ -31,7 +31,7 @@ $(function() {
           var data = JSON.parse(xhr.responseText);
 
           var fields = [['place'],
-                        ['address'],
+                        ['date'],
                         ['gallons'],
                         ['price', 'total'],
                         ['perGallon']];
@@ -55,7 +55,7 @@ $(function() {
 
         var newReading = {
             place: $("#place").val().trim(),
-            address: $("#address").val().trim(),
+            date: $("#date").val().trim(),
             gallons: $("#gallons").val().trim(),
             total: $("#total").val().trim(),
             perGallon: $("#perGallon").val().trim()
@@ -63,7 +63,7 @@ $(function() {
 
 
         $("#place").val("");
-        $("#address").val("");
+        $("#date").val("");
         $("#gallons").val("");
         $("#total").val("");
         $("#perGallon").val("");
@@ -100,7 +100,7 @@ $(function() {
            $("#add-btn").css("visibility", "hidden");
            
            $("#place").val(result.place);
-           $("#address").val(result.address);
+           $("#date").val(result.date);
            $("#gallons").val(result.gallons);
            $("#total").val(result.price);
            $("#perGallon").val(result.perGallon);
@@ -112,7 +112,7 @@ $(function() {
 
         var editReading = {
             place: $("#place").val().trim(),
-            address: $("#address").val().trim(),
+            date: $("#date").val().trim(),
             gallons: $("#gallons").val().trim(),
             total: $("#total").val().trim(),
             perGallon: $("#perGallon").val().trim()
@@ -120,7 +120,7 @@ $(function() {
 
 
         $("#place").val("");
-        $("#address").val("");
+        $("#date").val("");
         $("#gallons").val("");
         $("#total").val("");
         $("#perGallon").val("");
