@@ -2,9 +2,9 @@
   "name": "group-project-2",
   "version": "1.0.0",
   "description": "Project 2 Starter",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node app.js"
   },
   "license": "ISC",
   "dependencies": {
