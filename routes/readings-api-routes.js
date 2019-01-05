@@ -3,8 +3,18 @@ var db = require("../models");
 module.exports = function(app) {
     
     app.get("/", function(req, res) {
-        res.json(path.join(__dirname, "../public/home.html"));
-      });
+        db.Reading.findAll({
+           ////look to order in descend
+           order: [['createdAt', 'DESC']]
+        }).then(function(data) {
+           console.log(data);
+           var allReadings = {
+               readings: data
+           };
+           res.render("index", allReadings);
+            
+        });
+    });
     
     app.post("/api/readings", function(req, res) {
        db.Reading.create({
