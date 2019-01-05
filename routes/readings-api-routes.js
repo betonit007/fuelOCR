@@ -5,6 +5,7 @@ module.exports = function(app) {
     app.get("/", function(req, res) {
         db.Reading.findAll({
            ////look to order in descend
+           limit: 6,
            order: [['createdAt', 'DESC']]
         }).then(function(data) {
            console.log(data);
