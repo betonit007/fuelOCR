@@ -104,7 +104,7 @@ module.exports = function(app) {
     app.put("/api/update/:id", function(req, res) {
         db.Reading.update({
           place: req.body.place,
-          address: req.body.place,
+          address: req.body.address,
           gallons: req.body.gallons,
           price: req.body.total,
           perGallon: req.body.perGallon
