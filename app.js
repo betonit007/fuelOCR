@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const multer = require('multer');
 var db = require("./models");
-const PORT = process.env.PORT || 3000;
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -84,7 +84,7 @@ app.post('/upload', (req, res) => {
 
 require('./routes/readings-api-routes.js')(app);
 
-const PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3000;
 
 db.sequelize.sync({ force: true }).then(function() {
   app.listen(PORT, function() {
