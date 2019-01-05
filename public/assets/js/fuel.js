@@ -10,15 +10,10 @@ $(function() {
             file = e.originalEvent.srcElement.files[i];
             console.log(file);
 
-            var img = document.createElement("img");
-            var reader = new FileReader();
-            reader.onloadend = function() {
-                img.src = reader.result;
-                
-            }
-            reader.readAsDataURL(file);
-
-            $("#picField").append(img);
+            loadImage(
+              file,
+              canvas => $("#picField").append(canvas),
+              { orientation: true, maxWidth: 400 })
 
             $("#subButton").css("visibility", "visible");
             $("input").css("visibility", "hidden");

@@ -61,7 +61,7 @@ module.exports = function(app) {
     app.post("/api/readings", function(req, res) {
        db.Reading.create({
            place:  req.body.place,
-           address: req.body.address,
+           address: req.body.place,
            gallons: req.body.gallons,
            price: req.body.total,
            perGallon: req.body.perGallon
@@ -104,7 +104,7 @@ module.exports = function(app) {
     app.put("/api/update/:id", function(req, res) {
         db.Reading.update({
           place: req.body.place,
-          address: req.body.address,
+          address: req.body.place,
           gallons: req.body.gallons,
           price: req.body.total,
           perGallon: req.body.perGallon
