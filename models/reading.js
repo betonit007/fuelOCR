@@ -7,9 +7,12 @@ module.exports = function(sequelize, Sequelize) {
             len: [1]
         }
     },
-    date: { 
+    address: { 
         type: Sequelize.STRING,
-        allowNull: true
+        allowNull: false,
+        validate: {
+            len: [1]
+        }
     },
         gallons: {
         type: Sequelize.DOUBLE(5, 1),
