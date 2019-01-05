@@ -1,5 +1,5 @@
 require('dotenv').config();
-require('fs').writeFileSync(process.env.GOOGLE_APPLICATION_CREDENTIALS, process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON);
+//require('fs').writeFileSync(process.env.GOOGLE_APPLICATION_CREDENTIALS, process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON);
 
 const express = require('express');
 const app = express();
