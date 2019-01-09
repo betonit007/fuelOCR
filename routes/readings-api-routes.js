@@ -72,14 +72,23 @@ module.exports = function(app) {
 
     app.get("/", function(req, res) {
         db.Reading.findAll({
-           ////look to order in descend
-           order: [['id', 'DESC']]
+          limit: 6,
+          order: [['createdAt', 'DESC']]
         }).then(function(data) {
            console.log(data);
            res.render("index", { readings: data });
             
         });
     });
+
+    app.get("/database", function(req, res) {
+      db.Reading.findAll({
+         ////look to order in descend
+      }).then(function(data) {
+         res.json(data);
+          
+      });
+  });
 
     app.delete("/api/delete/:id", function(req, res) {
         db.Reading.destroy({
@@ -115,4 +124,30 @@ module.exports = function(app) {
             res.json(result);
         });
     });
+
+    app.get("/api/lowest", function(req, res) {
+      db.Reading.findAll({
+         ////look to order in descend
+         limit: 6,
+         order: [['perGallon', 'ASC']]
+      }).then(function(data) {
+         console.log(data);
+         res.render("lowest", { readings: data });
+          
+      });
+  });
+
+  app.get("/api/store", function(req, res) {
+    db.Reading.findAll({
+       ////look to order in descend
+       limit: 6,
+       order: [['place', 'ASC']]
+    }).then(function(data) {
+       console.log(data);
+       res.render("store", { readings: data });
+        
+    });
+});
+
+
 };

@@ -31,6 +31,38 @@
 
         <div class="container2">
 
+          <div class="card">
+              <div class="card-header">
+                Lowest Price
+              </div>
+    
+            {{#each readings}}  
+              <div class="row">
+                <div class="col-md-12 reading-container">
+                  <div class="card">
+                    <div class="card-header">
+                      <div class="row">
+                       <div class="col-6 reading readingPlace">Store: {{this.place}}</div>
+                       <div class="col-6 reading readingPrice">Total: ${{this.price}}</div>
+                       <div class="col-6 reading readingGallons">Gallons: {{this.gallons}}</div>
+                       <div class="col-6 reading readingGallons">Per Gal: ${{this.perGallon}}</div>
+                       <div class="col-12 reading readingDate">{{this.createdAt}}</div>
+                      <div class="col-12">
+                        <button id = "{{this.id}}" class="delete btn btn-xs btn-danger float-left">DELETE</button>
+                        <button data-edit="{{this.id}}" class="edit btn btn-xs btn-info float-right">EDIT</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+            
+            {{/each}}
+            </div>
+        </div>
+
+        <div class="container3">
+        
         <div class="row">
           <div class="col-lg-12">
             <div class="card">
@@ -77,48 +109,12 @@
             
             
         </div>
-
-          
-    
-
-        <div class="container3">
-
-          <div class="card">
-              <div class="card-header">
-                Recent Activity
-              </div>
-    
-            {{#each readings}}  
-              <div class="row">
-                <div class="col-md-12 reading-container">
-                  <div class="card">
-                    <div class="card-header">
-                      <div class="row">
-                       <div class="col-6 reading readingPlace">Store: {{this.place}}</div>
-                       <div class="col-6 reading readingPrice">Total: ${{this.price}}</div>
-                       <div class="col-6 reading readingGallons">Gallons: {{this.gallons}}</div>
-                       <div class="col-6 reading readingGallons">Per Gal: ${{this.perGallon}}</div>
-                       <div class="col-12 reading readingDate">{{this.createdAt}}</div>
-                      <div class="col-12">
-                        <button id = "{{this.id}}" class="delete btn btn-xs btn-danger float-left">DELETE</button>
-                        <button data-edit="{{this.id}}" class="edit btn btn-xs btn-info float-right">EDIT</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              </div>
-            
-            {{/each}}
-          </div>
-          </div>
-        
     </div>
     <div id="footer">
       <a href='/api/lowest'>Lowest Price</a>
        <a href='/'>Recent Activity</a>
        <a href='/api/store'>By Store</a>
-       <a href='/database'>Database</a>  
+       <a href='/database'>Database</a> 
     </div>
 </div>
 
